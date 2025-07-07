@@ -1,4 +1,4 @@
-<?php wp_head(); ?>
+
 <?php
 /**
  * The template for displaying all pages

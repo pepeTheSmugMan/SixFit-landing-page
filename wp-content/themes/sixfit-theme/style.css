@@ -67,6 +67,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
+	height: 100%;
+	margin: 0;
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
 }
@@ -78,6 +80,7 @@ html {
  * Remove the margin in all browsers.
  */
 body {
+	height: 100%;
 	margin: 0;
 }
 
@@ -973,33 +976,55 @@ textarea {
    Custom Styles for SixFit
 ============================= */
 
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-  background-color: #131732;
-  color: white;
+#masthead {
+	height: 50px;
+	background-color: black;
+	display: flex;
+	align-items: stretch;
+	gap: 2rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
-.hero h1 {
-  color: white;
-  font-size: 3rem;
+.main-navigation {
+	height: 100%;
+	background-color: red;
+	display: flex;
+	justify-content: flex-end;
+	align-items: stretch;
 }
 
-.hero a:visited {
-	color: white
+.main-navigation ul {
+	height: 100%;
+	display: flex;
+	background-color: white;
+	align-items: stretch;
+
 }
 
-.btn-primary {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 15px 30px;
-  background-color: #2c2e5a;
-  color: white;
+.main-navigation a {
+  margin-left: 2rem;
+  margin-right: 2rem;
   text-decoration: none;
-  border-radius: 6px;
-  transition: background 0.3s ease;
+  color: #111;
 }
 
-.btn-primary:hover {
-  background-color: #3f4170;
+.main-navigation li {
+	background-color: yellow;
+	display: flex;
+	align-items: center;
+}
+
+.main-navigation li:hover {
+    background-color: rgba(256,0,0,0.2);
+}
+
+.site-branding {
+	display: flex;
+	align-items: center;
+	background-color: #fff;
+}
+
+.site-branding * {
+	margin: 0;
 }

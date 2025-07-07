@@ -1,3 +1,4 @@
+
 <?php
 /**
  * The header for our theme
@@ -10,6 +11,7 @@
  */
 
 ?>
+
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -38,15 +40,11 @@
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
-			$sixfit_theme_description = get_bloginfo( 'description', 'display' );
-			if ( $sixfit_theme_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $sixfit_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+			?>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'sixfit-theme' ); ?></button>
+			<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'sixfit-theme' ); ?></button> -->
 			<?php
 			wp_nav_menu(
 				array(
@@ -56,4 +54,5 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
+		
 	</header><!-- #masthead -->
