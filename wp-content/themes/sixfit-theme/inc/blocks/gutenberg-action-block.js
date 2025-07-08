@@ -1,4 +1,5 @@
 const { registerBlockType } = wp.blocks;
+const elm = wp.element.createElement;
 
 registerBlockType('sixfit/custom-cta', {
     // built-in attributes
@@ -14,9 +15,10 @@ registerBlockType('sixfit/custom-cta', {
 
     //built-in functions
     edit() {
-        return wp.element.createElement(
-            'div', {}, 
-            wp.element.createElement('h1', {}, 'Test')
+        return elm(
+            'div', 
+            { classname: 'sixfit-cta-block'}, 
+            elm('h1', {}, 'Test')
         )
     },
 
