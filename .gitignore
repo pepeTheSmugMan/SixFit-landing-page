@@ -2,3 +2,4 @@ wordpress/wp-content/uploads/
 wordpress/wp-config.php
 wordpress/.htaccess
 wordpress/wp-content/debug.log
+wordpress/wp-content/themes/sixfit-theme/inc/blocks/node_modules/

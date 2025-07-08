@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "slug": "bright-indigo",
+          "color": "#2c2e5a",
+          "name": "Bright Indigo"
+        },
+        {
+          "slug": "dark-indigo",
+          "color": "#131732",
+          "name": "Dark Indigo"
+        },
+        {
+          "slug": "black",
+          "color": "#000000",
+          "name": "Black"
+        },
+        {
+          "slug": "white",
+          "color": "#ffffff",
+          "name": "White"
+        }
+      ]
+    }
+  }
+}

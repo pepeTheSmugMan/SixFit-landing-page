@@ -1,0 +1,16 @@
+{
+  "name": "blocks",
+  "version": "1.0.0",
+  "main": "gutenberg-action-block.js",
+  "scripts": {
+  "start": "wp-scripts start",
+  "build": "wp-scripts build"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@wordpress/scripts": "^30.19.0"
+  }
+}

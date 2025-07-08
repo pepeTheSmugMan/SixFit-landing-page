@@ -4,6 +4,32 @@
  * Custom Gutenberg functions
  */
 
+function theme_setup() {
+    // add support for gutenberg
+    add_theme_support('align-wide');
+    add_theme_support('responsive-embeds');
+    add_theme_support('editor-styles');
+
+    // add css to editor
+    add_editor_style('style.css');
+}
+add_action('after_setup_theme', 'theme_setup');
+
+//add custom category
+function add_custom_block_category($categories) {
+    return array_merge(
+        $categories,
+        array(
+            array(
+                'slug'  => 'sixfit',
+                'title' => __('sixfit block', 'sixfit'),
+            ),
+        )
+    );
+}
+add_filter('block_categories_all', 'add_custom_block_category', 10, 1);
+
+//change default colors of editor
 function sixfit_gutenberg_default_colors()
 {
     add_theme_support('editor-color-palette', array(
@@ -26,18 +52,15 @@ function sixfit_gutenberg_default_colors()
 }
 sixfit_gutenberg_default_colors();
 
-function sixfit_gutenberg_blocks() {
-    wp_register_script(
-        'custom-cta-js',
-        get_template_directory_uri() . '/inc/blocks/gutenberg-action-block.js',
-        array( 'wp-blocks', 'wp-element', 'wp-editor', 'wp-components' ),
-        filemtime( get_template_directory() . '/inc/blocks/gutenberg-action-block.js' ),
+//register blocks
+function enqueue_block_editor_assets() {
+    wp_enqueue_script(
+        'custom-blocks',
+        get_template_directory_uri() . '/inc/blocks/build/index.js', // Path to compiled JS
+        array('wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-block-editor'),
+        null,
         true
     );
-
-    register_block_type( 'sixfit/custom-cta', array(
-        'editor_script' => 'custom-cta-js'
-    ) );
 }
-sixfit_gutenberg_blocks();
+add_action('enqueue_block_editor_assets', 'enqueue_block_editor_assets');
 
