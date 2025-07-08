@@ -29,6 +29,10 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
+			<img 
+				src="<?php echo get_template_directory_uri(); ?>/assets/placeholder.png"
+				alt="icon"
+				loading="lazy">
 			<?php
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
