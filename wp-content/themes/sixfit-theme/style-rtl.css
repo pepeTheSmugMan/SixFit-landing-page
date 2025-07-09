@@ -719,7 +719,9 @@ textarea {
 .posts-navigation,
 .site-main
 .post-navigation {
-	margin: 0 0 1.5em;
+	/* margin: 0 0 1.5em; */
+	margin: 0;
+	padding: 0;
 }
 
 .comment-navigation .nav-links,

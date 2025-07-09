@@ -763,7 +763,7 @@ textarea {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 0 0 0;
 }
 
 .page-links {
@@ -940,6 +940,8 @@ textarea {
 /* Do not show the outline on the skip link target. */
 #primary[tabindex="-1"]:focus {
 	outline: 0;
+	margin: 0;
+	padding: 0;
 }
 
 /* Alignments
@@ -976,7 +978,13 @@ textarea {
    Custom Styles for SixFit
 ============================= */
 
-/*HEADER*/
+.entry-title {
+	display: none;
+}
+
+/*
+HEADER
+*/
 
 #masthead {
 	display: flex;
@@ -984,8 +992,10 @@ textarea {
 	gap: 2rem;
 	padding-left: 2rem;
 	padding-right: 2rem;
+	margin: 0;
 
 	color: gray;
+	border-bottom: 1px solid #ccc;
 }
 
 .main-navigation {
@@ -1034,6 +1044,82 @@ textarea {
 	color: inherit;
 }
 
+.site-branding a {
+	text-decoration: none;
+	color: inherit;
+}
+
 .site-branding * {
 	margin: 0;
+}
+
+/*
+FOOTER
+*/
+
+#colophon {
+	background-color: red;
+}
+
+/*
+SIXFIT-HERO GUTENBERG BLOCK
+*/
+
+.sixfit-hero-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 5rem;
+}
+
+.sixfit-hero-wrapper img {
+	max-height: 20rem;
+	max-width: 20rem;
+}
+
+.sixfit-hero-separator {
+	background-color: #fff;
+	height:10rem;
+	width: 0.2rem;
+	margin: 0 2rem 0 2rem;
+}
+
+.sixfit-hero-button {
+	display: flex;
+	background-color: #2c2e5a;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	width: 100%;
+
+	border-radius: 2rem;
+}
+
+.sixfit-hero-button a {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	text-align: center;
+}
+
+.sixfit-hero-content-wrapper {
+	display: flex;
+	flex-direction: column;
+	max-width: 15rem;
+}
+
+.sixfit-hero-content-wrapper h2 {
+	text-align: center;
+	margin: 0;
+}
+
+.sixfit-hero-content-wrapper p {
+	text-align: center;
+	width: inherit;
+	white-space: normal;
+ 	word-wrap: break-word;
+	overflow-x:auto;
+	max-height: 10rem;
 }
