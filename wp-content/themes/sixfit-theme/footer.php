@@ -13,21 +13,9 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="footer-info-wrapper">
-			<div class="footer-info-block">
-				<h3>title</h3>
-				<a href="https://google.com">tekst</a>
-				<a href="https://google.com">tekst</a>
-			</div>
-			<div class="footer-info-block">
-				<h3>titleerfefg</h3>
-				<a href="https://google.com">teksfgsdfgdsfst</a>
-				<a href="https://google.com">teksgsdgdt</a>
-			</div>
-			<div class="footer-info-block">
-				<h3>titleerf</h3>
-				<a href="https://google.com">tekdfgdsfst</a>
-				<a href="https://google.com">teksgsdgdt</a>
-			</div>
+			<?php if ( is_active_sidebar( 'footer-info-wrapper' ) ) : ?>
+				<?php dynamic_sidebar( 'footer-info-wrapper' ); ?>
+			<?php endif; ?>
 		</div>
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'sixfit-theme' ) ); ?>">

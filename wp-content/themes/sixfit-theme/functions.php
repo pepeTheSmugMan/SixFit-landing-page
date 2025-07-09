@@ -182,3 +182,15 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 require get_template_directory() . '/inc/blocks/gutenberg.php';
 
+function sixfit_register_footer_widgets() {
+	register_sidebar( array(
+		'name'          => __( 'Footer Columns', 'sixfit-theme' ),
+		'id'            => 'footer-info-wrapper',
+		'description'   => __( 'Add widgets here to appear in the first footer column.', 'sixfit-theme' ),
+		'before_widget' => '<div class="footer-info-block">',
+		'after_widget'  => '</div>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+}
+add_action( 'widgets_init', 'sixfit_register_footer_widgets' );

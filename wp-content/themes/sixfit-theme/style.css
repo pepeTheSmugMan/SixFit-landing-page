@@ -1075,7 +1075,7 @@ FOOTER
 .footer-info-wrapper {
 	display: flex;
 
-	align-items: center;
+	align-items: flex-start;
 	justify-content: center;
 }
 
@@ -1087,6 +1087,15 @@ FOOTER
 	padding: 1rem 2rem 1rem 2rem;
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
+}
+
+.footer-info-block h3 {
+	font-size: medium;
+}
+
+.footer-info-block a {
+	font-size: small;
 }
 
 .site-info {
