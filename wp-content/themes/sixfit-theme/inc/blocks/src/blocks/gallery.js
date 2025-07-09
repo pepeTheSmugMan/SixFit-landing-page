@@ -1,17 +1,13 @@
 const { registerBlockType } = wp.blocks;
-const { RichText, MediaUpload, InspectorControls, URLInputButton, useBlockProps } = wp.blockEditor;
-const { Button, PanelBody } = wp.components;
+const { MediaUpload, useBlockProps } = wp.blockEditor;
+const { Button } = wp.components;
+import { useState } from '@wordpress/element';
 
 registerBlockType('namespace/sixfit-gallery', {
     title: 'Sixfit gallery',
     icon: 'smiley',
     category: 'sixfit',
     attributes: {
-        content: {
-            type: 'string',
-            source: 'html',
-            selector: 'p',
-        },
         images: {
             type: 'array',
             default: [],
@@ -26,7 +22,9 @@ registerBlockType('namespace/sixfit-gallery', {
 
     edit({ attributes, setAttributes }) {
         const blockProps = useBlockProps({className: 'sixfit-gallery'});
-        const { content, images } = attributes;
+        const { images } = attributes;
+
+        const [currentIndex, setCurrentIndex] = useState(0);
 
         const onSelectImages = (media) => {
             const imageList = media.map((img) => ({
@@ -49,23 +47,16 @@ registerBlockType('namespace/sixfit-gallery', {
                         </Button>
                     )}
                 />
-                <RichText
-                    tagName="p"
-                    value={content}
-                    onChange={(content) => setAttributes({content})}
-                    placeholder="add a description..."
-                />
             </div>
         );
     },
 
     save({ attributes }) {
         const blockProps = useBlockProps.save({className: 'sixfit-gallery'});
-        const { content, images } = attributes;
+        const { images } = attributes;
 
         return (
             <div {...blockProps}>
-                <RichText.Content tagName="p" value={content} />
                 {images.map((img, i) => (
                     <img key={i} src={img.url} alt={img.alt} />
                 ))}
