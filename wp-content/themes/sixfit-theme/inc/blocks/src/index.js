@@ -185,7 +185,7 @@ registerBlockType('sixfit/footer-info-block', {
         };
 
         return (
-            <div {...blockProps} className="footer-info-block">
+            <div {...blockProps}>
                 <RichText
                     tagName="h3"
                     placeholder="Add title..."
