@@ -194,3 +194,24 @@ function sixfit_register_footer_widgets() {
 	) );
 }
 add_action( 'widgets_init', 'sixfit_register_footer_widgets' );
+
+
+/*sixfit gallery*/ 
+function sixfit_enqueue_gallery_scripts() {
+    // Only enqueue if block is present
+    if (has_block('namespace/sixfit-gallery')) {
+        wp_enqueue_script(
+            'sixfit-gallery-js',
+            get_template_directory_uri() . '/assets/js/sixfit-gallery.js',
+            array(), // No dependencies
+            '1.0',
+            true // in footer
+        );
+
+        wp_enqueue_style(
+            'sixfit-gallery-css',
+            get_template_directory_uri() . '/assets/css/sixfit-gallery.css'
+        );
+    }
+}
+add_action('wp_enqueue_scripts', 'sixfit_enqueue_gallery_scripts');

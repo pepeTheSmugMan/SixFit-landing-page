@@ -35,18 +35,20 @@ registerBlockType('namespace/sixfit-gallery', {
         };
 
         return (
-            <div {...blockProps}>
-                <MediaUpload
-                    onSelect={onSelectImages}
-                    allowedTypes={['image']}
-                    multiple
-                    gallery
-                    render={({ open }) => (
-                        <Button onClick={open} variant="secondary">
-                            {images.length ? 'Edit Gallery' : 'Add Gallery'} 
-                        </Button>
-                    )}
-                />
+            <div {...blockProps} data-gallery>
+                <div className="sixfit-gallery-inner">
+                    <MediaUpload
+                        onSelect={onSelectImages}
+                        allowedTypes={['image']}
+                        multiple
+                        gallery
+                        render={({ open }) => (
+                            <Button onClick={open} variant="secondary">
+                                {images.length ? 'Edit Gallery' : 'Add Gallery'} 
+                            </Button>
+                        )}
+                    />
+                </div>
             </div>
         );
     },
@@ -56,10 +58,20 @@ registerBlockType('namespace/sixfit-gallery', {
         const { images } = attributes;
 
         return (
-            <div {...blockProps}>
-                {images.map((img, i) => (
-                    <img key={i} src={img.url} alt={img.alt} />
-                ))}
+            <div {...blockProps} data-gallery>
+                <div className="sixfit-gallery-inner">
+                    {images.map((img, i) => (
+                    <img
+                        key={i}
+                        src={img.url}
+                        alt={img.alt}
+                        className={i === 0 ? 'active' : ''}
+                        data-index={i}
+                    />
+                    ))}
+                </div>
+                <button className="sixfit-gallery-prev" aria-label="Previous">‹</button>
+                <button className="sixfit-gallery-next" aria-label="Next">›</button>
             </div>
         );
     }

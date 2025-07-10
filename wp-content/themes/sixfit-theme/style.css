@@ -1173,19 +1173,22 @@ SIXFIT-HERO GUTENBERG BLOCK
 /*
 SIXFIT GALLERY
 */
+
 .sixfit-gallery {
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 2rem;
-	padding: 2rem;
+	background-color: red;
+}
 
-	background-color: #eee;
-	border: 1px solid #bbb;
-}
 .sixfit-gallery img {
+    display: none;
 	max-height: 20rem;
+	max-width: 20rem;
 }
+
+.sixfit-gallery img.active {
+    display: block;
+}
+
 /* HOME PAGE */
 /*
 HOME CONTENT BLOCK
@@ -1212,8 +1215,16 @@ HOME CONTENT BLOCK
 HOME CONTENT PHOTO
 */
 .home-content-photo {
+	position: relative;
+	z-index: 0;
 	display: inline-block;
 	width: 100%;
+}
+
+.home-content-photo p,
+.home-content-photo h2 {
+	position: relative;
+	z-index: 2;
 }
 
 .home-content-photo::after {
@@ -1222,5 +1233,6 @@ HOME CONTENT PHOTO
     inset: 0;
     background: linear-gradient(to bottom, rgba(44,46,90,1), rgba(0,0,0,0.2));
     pointer-events: none; /* allows clicks to pass through */
+	z-index: 1;
 }
 
