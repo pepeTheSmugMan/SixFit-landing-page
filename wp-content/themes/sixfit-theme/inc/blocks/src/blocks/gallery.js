@@ -36,7 +36,6 @@ registerBlockType('namespace/sixfit-gallery', {
 
         return (
             <div {...blockProps} data-gallery>
-                <div className="sixfit-gallery-inner">
                     <MediaUpload
                         onSelect={onSelectImages}
                         allowedTypes={['image']}
@@ -48,7 +47,6 @@ registerBlockType('namespace/sixfit-gallery', {
                             </Button>
                         )}
                     />
-                </div>
             </div>
         );
     },
@@ -59,7 +57,7 @@ registerBlockType('namespace/sixfit-gallery', {
 
         return (
             <div {...blockProps} data-gallery>
-                <div className="sixfit-gallery-inner">
+                <div className='sixfit-gallery-inner'>
                     {images.map((img, i) => (
                     <img
                         key={i}
@@ -70,8 +68,10 @@ registerBlockType('namespace/sixfit-gallery', {
                     />
                     ))}
                 </div>
-                <button className="sixfit-gallery-prev" aria-label="Previous">‹</button>
-                <button className="sixfit-gallery-next" aria-label="Next">›</button>
+                <div className='sixfit-gallery-buttons'>
+                    <button className="sixfit-gallery-prev" aria-label="Previous">‹</button>
+                    <button className="sixfit-gallery-next" aria-label="Next">›</button>
+                </div>
             </div>
         );
     }

@@ -1175,18 +1175,52 @@ SIXFIT GALLERY
 */
 
 .sixfit-gallery {
+	max-width: 15rem;
+	max-height: inherit;
 	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.sixfit-gallery-inner::after {
 	background-color: red;
 }
 
 .sixfit-gallery img {
     display: none;
-	max-height: 20rem;
-	max-width: 20rem;
+	border-radius: 1rem 1rem 0 0;
 }
 
 .sixfit-gallery img.active {
     display: block;
+}
+
+.sixfit-gallery-buttons {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.sixfit-gallery button {
+	width: 100%;
+	background-color: #131732;
+  	color: white;
+	margin-top: 2px;
+	border: none;
+}
+
+.sixfit-gallery button:hover {
+	background-color: #2c2e5a;
+}
+
+.sixfit-gallery-next {
+	border-bottom-right-radius: 1rem;
+	margin-left: 1px;
+}
+
+.sixfit-gallery-prev {
+	border-bottom-left-radius: 1rem;
+	margin-right: 1px;
 }
 
 /* HOME PAGE */
