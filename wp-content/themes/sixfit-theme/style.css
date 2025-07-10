@@ -1106,8 +1106,17 @@ FOOTER
 	gap: 0.5rem;
 }
 
+/**
+* CONTACT
+*/
+
+.sixfit-contact-info a {
+	text-decoration: none;
+	color: inherit;
+}
+
 /*
-SIXFIT-HERO GUTENBERG BLOCK
+SIXFIT-HERO GUTENBERG BLOCKS
 */
 
 .sixfit-hero-wrapper {
