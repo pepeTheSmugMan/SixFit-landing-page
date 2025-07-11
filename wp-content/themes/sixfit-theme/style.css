@@ -1121,6 +1121,7 @@ SIXFIT-HERO GUTENBERG BLOCKS
 
 .sixfit-hero-wrapper {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	padding: 5rem;
@@ -1130,6 +1131,7 @@ SIXFIT-HERO GUTENBERG BLOCKS
 .sixfit-hero-wrapper img {
 	max-height: 20rem;
 	max-width: 20rem;
+	border-radius: 2rem;
 }
 
 .sixfit-hero-separator {
@@ -1137,6 +1139,12 @@ SIXFIT-HERO GUTENBERG BLOCKS
 	height:10rem;
 	width: 0.2rem;
 	margin: 0 2rem 0 2rem;
+}
+
+.sixfit-hero-content-wrapper {
+	display: flex;
+	flex-direction: column;
+	max-width: 15rem;
 }
 
 .sixfit-hero-button {
@@ -1157,12 +1165,6 @@ SIXFIT-HERO GUTENBERG BLOCKS
 	height: 100%;
 	text-decoration: none;
 	text-align: center;
-}
-
-.sixfit-hero-content-wrapper {
-	display: flex;
-	flex-direction: column;
-	max-width: 15rem;
 }
 
 .sixfit-hero-content-wrapper h2 {
@@ -1187,6 +1189,7 @@ SIXFIT GALLERY
 	max-width: 15rem;
 	max-height: inherit;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }

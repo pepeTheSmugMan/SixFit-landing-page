@@ -195,11 +195,30 @@ function sixfit_register_footer_widgets() {
 }
 add_action( 'widgets_init', 'sixfit_register_footer_widgets' );
 
+/*sixfit hero*/
+function sixfit_enqueue_hero_scripts() {
+    // Only enqueue if block is present
+    if (has_block('sixfit/hero')) {
+        wp_enqueue_script(
+            'sixfit-hero-js',
+            get_template_directory_uri() . '/assets/js/sixfit-hero.js',
+            array(), // No dependencies
+            '1.0',
+            true // in footer
+        );
+
+        wp_enqueue_style(
+            'sixfit-hero-css',
+            get_template_directory_uri() . '/assets/css/sixfit-hero.css'
+        );
+    }
+}
+add_action('wp_enqueue_scripts', 'sixfit_enqueue_hero_scripts');
 
 /*sixfit gallery*/ 
 function sixfit_enqueue_gallery_scripts() {
     // Only enqueue if block is present
-    if (has_block('namespace/sixfit-gallery')) {
+    if (has_block('sixfit/gallery')) {
         wp_enqueue_script(
             'sixfit-gallery-js',
             get_template_directory_uri() . '/assets/js/sixfit-gallery.js',
@@ -215,3 +234,4 @@ function sixfit_enqueue_gallery_scripts() {
     }
 }
 add_action('wp_enqueue_scripts', 'sixfit_enqueue_gallery_scripts');
+
