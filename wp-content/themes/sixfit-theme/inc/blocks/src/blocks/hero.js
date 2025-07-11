@@ -111,9 +111,9 @@ registerBlockType('sixfit/hero', {
                 <div className="sixfit-hero-content-wrapper">
                     <RichText.Content tagName="h2" value={title} />
                     <RichText.Content tagName="p" value={content} />
-                    <div className="sixfit-hero-button">
+                    <div className="sixfit-hero-button sixfit-button">
                         {buttonURL && (
-                            <a href={buttonURL} className="button">
+                            <a href={buttonURL}>
                                 {buttonText}
                             </a>
                         )}

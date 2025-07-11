@@ -991,8 +991,6 @@ HEADER
 
 #masthead {
 	display: flex;
-	align-items: stretch;
-	gap: 2rem;
 	padding-left: 2rem;
 	padding-right: 2rem;
 	margin: 0;
@@ -1012,21 +1010,11 @@ HEADER
 	display: flex;
 }
 
-.main-navigation a {
-  margin-left: 3rem;
-  margin-right: 3rem;
-  text-decoration: none;
-  color: inherit;
-  padding-left: 25%;
-  padding-right: 25%;
-}
-
 .main-navigation li {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	color: inherit;
-	flex: 1;
 }
 
 .main-navigation li:hover {
@@ -1034,15 +1022,29 @@ HEADER
 	color: #333;
 }
 
+.main-navigation a {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  text-decoration: none;
+  color: inherit;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
 .site-branding {
 	display: flex;
 	align-items: center;
 	width: 100%;
 	max-width: 8rem;
-	gap:1rem;
 
 	font-weight: 700;
 	font-size: x-large;
+
+	transition: 0.5s ease;
+}
+
+.site-branding:hover {
+	color: black;
 }
 
 .site-branding a:visited {
@@ -1053,6 +1055,8 @@ HEADER
 .site-branding a {
 	text-decoration: none;
 	color: inherit;
+	display: flex;
+	flex-shrink: 1;
 }
 
 .site-branding * {
@@ -1132,6 +1136,11 @@ SIXFIT-HERO GUTENBERG BLOCKS
 	max-height: 20rem;
 	max-width: 20rem;
 	border-radius: 2rem;
+	transition: 0.3s ease;
+}
+
+.sixfit-hero-wrapper img:hover {
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
 }
 
 .sixfit-hero-separator {
@@ -1157,6 +1166,14 @@ SIXFIT-HERO GUTENBERG BLOCKS
 	width: 100%;
 
 	border-radius: 2rem;
+}
+
+.sixfit-button {
+	transition: 0.2s ease;
+}
+
+.sixfit-button:hover {
+  transform: scale(1.05);
 }
 
 .sixfit-hero-button a {

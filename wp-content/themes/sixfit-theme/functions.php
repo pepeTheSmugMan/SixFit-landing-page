@@ -206,11 +206,6 @@ function sixfit_enqueue_hero_scripts() {
             '1.0',
             true // in footer
         );
-
-        wp_enqueue_style(
-            'sixfit-hero-css',
-            get_template_directory_uri() . '/assets/css/sixfit-hero.css'
-        );
     }
 }
 add_action('wp_enqueue_scripts', 'sixfit_enqueue_hero_scripts');
@@ -225,11 +220,6 @@ function sixfit_enqueue_gallery_scripts() {
             array(), // No dependencies
             '1.0',
             true // in footer
-        );
-
-        wp_enqueue_style(
-            'sixfit-gallery-css',
-            get_template_directory_uri() . '/assets/css/sixfit-gallery.css'
         );
     }
 }

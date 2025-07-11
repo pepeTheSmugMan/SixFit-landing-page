@@ -3,7 +3,7 @@ const { MediaUpload, useBlockProps } = wp.blockEditor;
 const { Button } = wp.components;
 import { useState } from '@wordpress/element';
 
-registerBlockType('namespace/sixfit-gallery', {
+registerBlockType('sixfit/gallery', {
     title: 'Sixfit gallery',
     icon: 'smiley',
     category: 'sixfit',
