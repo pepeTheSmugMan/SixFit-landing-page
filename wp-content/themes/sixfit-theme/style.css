@@ -80,6 +80,7 @@ html {
  * Remove the margin in all browsers.
  */
 body {
+	overflow-x: hidden;
 	height: 100%;
 	margin: 0;
 }
@@ -1069,39 +1070,51 @@ FOOTER
 
 #colophon {
 	display: flex;
-	flex-direction: column;
+	justify-content: center;
 	width: 100%;
-
 	background-color: #eee;
-	border-top: 1px solid #bbb;
 	padding: 0.2rem;
+	max-width: 100%;
+}
 
+#colophon a {
+	text-decoration: none;
+	color: #2c2e5a;
+}
+
+#colophon a:visited {
+	color: inherit;
+}
+
+#colophon a:hover {
+	color: #43479e;
 }
 
 .footer-info-wrapper {
+	max-width: 100%;
 	display: flex;
-
-	align-items: flex-start;
-	justify-content: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	word-wrap: break-word;
 }
 
 .footer-info-wrapper * {
+	max-width: 100%;
 	margin: 0;
 }
 
 .footer-info-block {
 	padding: 1rem 2rem 1rem 2rem;
 	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+	align-self: center;
+	align-items: center;
+	gap: 1rem;
+	flex-wrap: wrap;
 }
 
 .footer-info-block h3 {
 	font-size: medium;
-}
-
-.footer-info-block a {
-	font-size: small;
+	color: #2c2e5a;
 }
 
 .site-info {
